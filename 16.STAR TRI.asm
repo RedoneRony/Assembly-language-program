@@ -1,0 +1,48 @@
+.STACK 100H
+.MODEL SMALL
+.DATA
+  msg DW '     * $'
+  msg1 DW '    *** $'
+  msg2 DW '   ***** $'
+  msg3 DW '  ******* $'
+.CODE
+ MAIN PROC
+ MOV AX,@DATA
+ MOV DS,AX
+ 
+ LEA DX,msg
+ MOV AH,9
+ INT 21H 
+ 
+ MOV AH,2
+ MOV DL,0DH
+ INT 21H
+ MOV DL,0AH
+ INT 21H
+ 
+ LEA DX,msg1
+ MOV AH,9
+ INT 21H
+ 
+ MOV AH,2
+ MOV DL,0DH
+ INT 21H
+ MOV DL,0AH
+ INT 21H
+ 
+ LEA DX,msg2
+ MOV AH,9
+ INT 21H 
+ 
+ MOV AH,2
+ MOV DL,0DH
+ INT 21H
+ MOV DL,0AH
+ INT 21H
+ 
+ LEA DX,msg3
+ MOV AH,9
+ INT 21H
+ 
+ MAIN ENDP
+ END MAIN
